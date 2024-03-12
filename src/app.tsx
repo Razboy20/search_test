@@ -6,9 +6,12 @@ import { Toast } from "@kobalte/core";
 // import { ThemeProvider } from "./components/ThemeController";
 
 import { Router } from "@solidjs/router";
-import { FileRoutes } from "@solidjs/start";
+import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
 import { ThemeControllerButton, ThemeProvider } from "./components/ThemeController";
+
+// entry-server classes:
+// min-h-screen w-full bg-neutral-100 transition-colors duration-100 dark:bg-neutral-800 font-sans
 
 export default function App() {
   return (

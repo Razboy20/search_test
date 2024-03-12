@@ -1,14 +1,14 @@
-import { createHandler } from "@solidjs/start/entry";
-import { StartServer, getCookie } from "@solidjs/start/server";
+import { StartServer, createHandler } from "@solidjs/start/server";
+import { getCookie } from "vinxi/http";
 import logo from "~/assets/img/logo.svg";
 
 export default createHandler((ctx) => {
-  const theme = getCookie(ctx, "color-theme");
+  const theme = getCookie(ctx.nativeEvent, "color-theme") ?? "dark";
 
   return (
     <StartServer
       document={({ assets, children, scripts }) => (
-        <html lang="en" class="h-full font-sans" classList={{ dark: theme === "dark" }}>
+        <html lang="en" class="font-sans" classList={{ dark: theme === "dark" }}>
           <head>
             <title>Search UI Testing</title>
             <meta charset="utf-8" />
@@ -17,7 +17,7 @@ export default createHandler((ctx) => {
             <link rel="icon" type="image/svg+xml" href={logo} />
             {assets}
           </head>
-          <body class="h-full w-full bg-neutral-100 transition-colors duration-100 dark:bg-neutral-800">
+          <body class="min-h-screen w-full bg-neutral-100 transition-colors duration-100 dark:bg-neutral-800">
             <div id="app">{children}</div>
             {scripts}
           </body>

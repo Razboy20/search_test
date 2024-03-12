@@ -4,4 +4,4 @@ if (import.meta.env.DEV) {
   await import("solid-devtools");
 }
 
-mount(() => <StartClient />, document.getElementById("app"));
+mount(() => <StartClient />, document.getElementById("app")!);

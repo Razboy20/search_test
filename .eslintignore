@@ -1,2 +1,3 @@
 packages/website/node_modules/*
 packages/website/.solid/*
+tsconfig.json

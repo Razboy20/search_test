@@ -22,7 +22,7 @@ module.exports = {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     tsconfigRootDir: __dirname,
     project: ["./tsconfig.json"],
-    extraFileExtensions: [".json"],
+
   },
   plugins: ["@typescript-eslint", "solid", "prettier"],
   ignorePatterns: ["node_modules/**", "**/dist/**", "!**/.*", "pnpm-lock.yaml"],
